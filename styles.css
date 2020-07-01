@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,900;1,400&display=swap');
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #EFEEEE;
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+  margin: 20px;
+  font-weight: 300;
+}
+
+.content {
+  padding: 20px;
+}
+
+.fixed-width {
+  width: 700px;
+  margin: auto;
+  padding: 15px;
+}
+
+/*
+See https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6
+*/
+
+.neumorphic-card {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: -6px -6px 16px rgba(255,255,255,.5),
+              6px 6px 16px rgba(209, 205, 199, .5);
+}
+
+.project {
+  margin: 20px;
+}
+
+h3 {
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+  margin-top: 40px;
+  font-weight: 300;
+}
+
+.img-wrapper {
+  margin: 10px;
+  display: block;
+}
+
+img {
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+}
+
+.tags {
+  padding: 10px;
+  border-top: 1px solid rgba(0,0,0,0.125);
+}
+
+.tags span {
+  margin: 5px;
+  padding: 5px;
+  display:inline-block;
+  border-radius: 5px;
+  font-style: italic;
+  border-top: 1px solid rgba(255,255,255,0.125);
+  border-left: 1px solid rgba(255,255,255,0.125);
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+  border-right: 1px solid rgba(0,0,0,0.125);
+}
