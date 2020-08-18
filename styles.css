@@ -7,20 +7,55 @@ body, html {
   padding: 0;
   background-color: #EFEEEE;
   font-family: 'Merriweather', serif;
+  text-align: justify;
 }
 
 h1 {
   border-bottom: 1px solid rgba(0,0,0,0.125);
   margin: 20px;
   font-weight: 300;
+  grid-area: header;
+}
+
+.portrait {
+  grid-area: pic;
+  margin: 0 auto;
+}
+
+.portrait img {
+  margin: 0 auto;
+  width: 200px;
+}
+
+.links {
+  text-align: center;
+}
+
+.grid-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: 'header header header'
+  	               '. content pic';
+  grid-template-columns: 1fr 700px 1fr;
+  grid-template-rows: 1fr;
+}
+
+@media only screen and (max-width: 900px) {
+  .grid-wrapper {
+    grid-template-areas: 'header'
+    		         'pic'
+  		         'content';
+    grid-template-columns: 1fr;
+  }
 }
 
 .content {
+  grid-area: content;
   padding: 20px;
 }
 
 .fixed-width {
-  width: 700px;
   margin: auto;
   padding: 15px;
 }
@@ -29,11 +64,14 @@ h1 {
 See https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6
 */
 
-.neumorphic-card {
+.card {
   padding: 15px;
   border-radius: 10px;
+  margin-bottom: 50px;
+  /*
   box-shadow: -6px -6px 16px rgba(255,255,255,.5),
               6px 6px 16px rgba(209, 205, 199, .5);
+  */
 }
 
 .project {
@@ -57,19 +95,44 @@ img {
   height: auto;
 }
 
+.tags:before {
+  content: 'This project features: ';
+}
+
 .tags {
+  text-align: center;
   padding: 10px;
-  border-top: 1px solid rgba(0,0,0,0.125);
 }
 
 .tags span {
-  margin: 5px;
-  padding: 5px;
   display:inline-block;
   border-radius: 5px;
   font-style: italic;
+  /*
+  text-decoration: underline;
   border-top: 1px solid rgba(255,255,255,0.125);
   border-left: 1px solid rgba(255,255,255,0.125);
   border-bottom: 1px solid rgba(0,0,0,0.125);
   border-right: 1px solid rgba(0,0,0,0.125);
+  */
+}
+
+.tags span:after {
+  content: ',';
+}
+
+.tags span:nth-last-child(2):after {
+  content: '';
+}
+
+.tags span:last-child:before {
+  content: '& ';
+}
+
+.tags span:first-child:before {
+  content: '';
+}
+
+.tags span:last-child:after {
+  content: '';
 }
